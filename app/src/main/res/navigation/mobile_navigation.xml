@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_banner">
+
+    <fragment
+        android:id="@+id/navigation_interstitial"
+        android:name="net.pubnative.hybidstandalonedemo.ui.interstitial.InterstitialFragment"
+        android:label="@string/title_interstitial"
+        tools:layout="@layout/fragment_interstitial" />
+
+    <fragment
+        android:id="@+id/navigation_banner"
+        android:name="net.pubnative.hybidstandalonedemo.ui.banner.BannerFragment"
+        android:label="@string/title_banner"
+        tools:layout="@layout/fragment_banner" />
+
+    <fragment
+        android:id="@+id/navigation_rewarded"
+        android:name="net.pubnative.hybidstandalonedemo.ui.rewarded.RewardedFragment"
+        android:label="@string/title_rewarded"
+        tools:layout="@layout/fragment_rewarded" />
+
+    <fragment
+        android:id="@+id/navigation_native"
+        android:name="net.pubnative.hybidstandalonedemo.ui.native.NativeFragment"
+        android:label="@string/title_native"
+        tools:layout="@layout/fragment_native" />
+</navigation>
