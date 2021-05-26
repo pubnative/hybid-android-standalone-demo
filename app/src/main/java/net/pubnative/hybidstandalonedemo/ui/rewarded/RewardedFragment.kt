@@ -1,46 +1,76 @@
 package net.pubnative.hybidstandalonedemo.ui.rewarded
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import net.pubnative.hybidstandalonedemo.databinding.FragmentRewardedBinding
+import net.pubnative.hybidstandalonedemo.R
+import net.pubnative.lite.sdk.rewarded.HyBidRewardedAd
 
 class RewardedFragment : Fragment() {
+    val TAG = RewardedFragment::class.java.simpleName
 
-    private lateinit var rewardedViewModel: RewardedViewModel
-    private var _binding: FragmentRewardedBinding? = null
+    private lateinit var loadButton: Button
+    private lateinit var showButton: Button
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    private var rewardedAd: HyBidRewardedAd? = null
 
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        rewardedViewModel =
-                ViewModelProvider(this).get(RewardedViewModel::class.java)
+    private var zoneId: String = "4"
 
-        _binding = FragmentRewardedBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
+        inflater.inflate(R.layout.fragment_rewarded, container, false)
 
-        val loadButton: Button = binding.buttonLoad
-        loadButton.setOnClickListener{
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        loadButton = view.findViewById(R.id.button_load)
+        showButton = view.findViewById(R.id.button_show)
+
+        loadButton.setOnClickListener {
+            loadRewardedVideo()
         }
 
-        return root
+        showButton.setOnClickListener {
+            rewardedAd?.show()
+        }
+
     }
 
     override fun onDestroyView() {
+        rewardedAd?.destroy()
         super.onDestroyView()
-        _binding = null
+    }
+
+    private fun loadRewardedVideo() {
+        rewardedAd = HyBidRewardedAd(activity, zoneId, object : HyBidRewardedAd.Listener {
+            override fun onRewardedLoaded() {
+                Log.d(TAG, "onRewardedLoaded")
+                showButton.isEnabled = true
+            }
+
+            override fun onRewardedLoadFailed(error: Throwable) {
+                Log.d(TAG, "onRewardedLoadFailed", error)
+            }
+
+            override fun onRewardedOpened() {
+                Log.d(TAG, "onRewardedOpened")
+            }
+
+            override fun onRewardedClosed() {
+                Log.d(TAG, "onRewardedClosed")
+            }
+
+            override fun onRewardedClick() {
+                Log.d(TAG, "onRewardedClick")
+            }
+
+            override fun onReward() {
+                Log.d(TAG, "onReward")
+            }
+        })
+        rewardedAd!!.load()
     }
 }

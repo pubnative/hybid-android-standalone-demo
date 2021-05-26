@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/fragment_banner"
-    tools:context=".ui.banner.BannerFragment">
+    android:id="@+id/fragment_mrect"
+    tools:context=".ui.mrect.MrectFragment">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_load"
@@ -21,9 +21,9 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <net.pubnative.lite.sdk.views.HyBidAdView
-        android:id="@+id/hybid_banner"
-        android:layout_width="320dp"
-        android:layout_height="50dp"
+        android:id="@+id/hybid_mrect"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
         android:layout_gravity="center_horizontal"
 
         app:layout_constraintEnd_toEndOf="parent"

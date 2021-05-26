@@ -18,6 +18,12 @@
         tools:layout="@layout/fragment_banner" />
 
     <fragment
+        android:id="@+id/navigation_mrect"
+        android:name="net.pubnative.hybidstandalonedemo.ui.mrect.MrectFragment"
+        android:label="@string/title_mrect"
+        tools:layout="@layout/fragment_mrect" />
+
+    <fragment
         android:id="@+id/navigation_rewarded"
         android:name="net.pubnative.hybidstandalonedemo.ui.rewarded.RewardedFragment"
         android:label="@string/title_rewarded"

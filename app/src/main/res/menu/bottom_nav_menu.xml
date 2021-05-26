@@ -7,6 +7,11 @@
         android:title="@string/title_banner" />
 
     <item
+        android:id="@+id/navigation_mrect"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_mrect" />
+
+    <item
         android:id="@+id/navigation_interstitial"
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="@string/title_interstitial" />
