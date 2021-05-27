@@ -18,7 +18,7 @@ class RewardedFragment : Fragment() {
 
     private var rewardedAd: HyBidRewardedAd? = null
 
-    private var zoneId: String = "4"
+    private val zoneId: String = "4"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.fragment_rewarded, container, false)
@@ -39,9 +39,9 @@ class RewardedFragment : Fragment() {
 
     }
 
-    override fun onDestroyView() {
+    override fun onDestroy() {
         rewardedAd?.destroy()
-        super.onDestroyView()
+        super.onDestroy()
     }
 
     private fun loadRewardedVideo() {

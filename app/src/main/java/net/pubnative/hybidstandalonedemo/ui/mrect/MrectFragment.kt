@@ -18,7 +18,7 @@ class MrectFragment : Fragment() {
     private lateinit var hybidMrect: HyBidAdView
     private lateinit var loadButton: Button
 
-    private var zoneId: String = "5"
+    private val zoneId: String = "5"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.fragment_mrect, container, false)
@@ -37,9 +37,9 @@ class MrectFragment : Fragment() {
 
     }
 
-    override fun onDestroyView() {
+    override fun onDestroy() {
         hybidMrect.destroy()
-        super.onDestroyView()
+        super.onDestroy()
     }
 
     private fun loadBanner() {

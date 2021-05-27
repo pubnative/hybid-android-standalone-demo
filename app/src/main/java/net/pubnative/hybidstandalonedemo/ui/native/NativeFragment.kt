@@ -30,7 +30,7 @@ class NativeFragment : Fragment(), HyBidNativeAdRequest.RequestListener, NativeA
     private var nativeAd: NativeAd? = null
     private var nativeAdRequest: HyBidNativeAdRequest? = null
 
-    private var zoneId: String = "7"
+    private val zoneId: String = "7"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.fragment_native, container, false)
@@ -55,11 +55,11 @@ class NativeFragment : Fragment(), HyBidNativeAdRequest.RequestListener, NativeA
 
     }
 
-    override fun onDestroyView() {
+    override fun onDestroy() {
         if (nativeAd != null) {
             nativeAd!!.stopTracking()
         }
-        super.onDestroyView()
+        super.onDestroy()
     }
 
     private fun loadNativeAd() {

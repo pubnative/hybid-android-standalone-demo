@@ -18,7 +18,7 @@ class BannerFragment : Fragment() {
     private lateinit var hybidBanner: HyBidAdView
     private lateinit var loadButton: Button
 
-    private var zoneId: String = "2"
+    private val zoneId: String = "2"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.fragment_banner, container, false)
@@ -35,9 +35,9 @@ class BannerFragment : Fragment() {
 
     }
 
-    override fun onDestroyView() {
+    override fun onDestroy() {
         hybidBanner.destroy()
-        super.onDestroyView()
+        super.onDestroy()
     }
 
 

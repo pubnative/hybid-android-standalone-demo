@@ -17,7 +17,7 @@ class InterstitialFragment : Fragment() {
     private lateinit var showButton: Button
 
     private var interstitial: HyBidInterstitialAd? = null
-    private var zoneId: String = "3"
+    private val zoneId: String = "3"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.fragment_interstitial, container, false)
@@ -38,10 +38,9 @@ class InterstitialFragment : Fragment() {
 
     }
 
-    override fun onDestroyView() {
+    override fun onDestroy() {
         interstitial?.destroy()
-        super.onDestroyView()
-
+        super.onDestroy()
     }
 
     private fun loadInterstitial() {
