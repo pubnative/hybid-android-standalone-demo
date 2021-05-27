@@ -67,6 +67,7 @@ class InterstitialFragment : Fragment() {
                 Log.d(TAG,"onInterstitialClick")
             }
         })
+        interstitial?.setSkipOffset(3)
         interstitial!!.load()
     }
 }
