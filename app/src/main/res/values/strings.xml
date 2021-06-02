@@ -2,7 +2,7 @@
     <string name="app_name">HyBid Standalone Demo</string>
 
     <string name="title_banner">Banner</string>
-    <string name="title_mrect">mrect</string>
+    <string name="title_mrect">Medium</string>
     <string name="title_interstitial">Interstitial</string>
     <string name="title_rewarded">Rewarded</string>
     <string name="title_native">Native</string>
