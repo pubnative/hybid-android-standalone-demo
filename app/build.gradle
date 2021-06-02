@@ -11,8 +11,8 @@ android {
         applicationId "net.pubnative.hybidstandalonedemo"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 20407
+        versionName "2.4.7"
 
         multiDexEnabled true
 
